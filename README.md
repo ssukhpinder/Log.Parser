@@ -37,7 +37,15 @@ Allow a choice of time span for conversion.
 # Solution
 The technology stack used to solve the above problem is as follows
 - .Net 8 Web API Backend with Swagger Enabled
-- Angular FrontEnd(17.3.8) with Bootstrap
+- Angular version (17.3.8) with Bootstrap
+
+# Project Breakdown
+| Component          | Description                      |
+| ------------------ | -------------------------------- |
+| log.parser.client  | Angular Code                     |
+| Log.Parser.Server  | REST API .NET 8 Code             |
+| Log.Parser.BL      | Complete business logic          |
+| Log.Parser.Tests   | Test Cases of the REST API Project|
 
 # How to Run the Project
 ### Step 1: Clone the following repository using the Github CLI command
