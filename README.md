@@ -52,6 +52,10 @@ The technology stack used to solve the above problem is as follows
 ```
 gh repo clone ssukhpinder/Log.Parser
 ```
+or using Git Command
+```
+git clone https://github.com/ssukhpinder/Log.Parser
+```
 
 ### Step 2: Open the project in Visual Studio
 Open the project in Visual Studio, then build the solution by right-clicking on the solution and selecting "Build Solution."
