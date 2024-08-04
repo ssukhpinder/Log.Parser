@@ -22,7 +22,7 @@ export interface Result {
   styleUrl: './access-per-webserver.component.css'
 })
 export class AccessPerWebserverComponent {
-  
+
   selectedStartDate?: Date;
   selectedStartTime?: Date;
   selectedEndDate?: Date;
@@ -49,19 +49,23 @@ export class AccessPerWebserverComponent {
 
 
   uploadFile(file: File) {
-    const formData = new FormData();
-    formData.append('file', file);
-    var formattedStartDateTime = moment(this.selectedStartDate).format('MM/DD/YYYY') + ' ' + moment(this.selectedStartTime).format('hh:mm A');
-    var formattedEndDateTime = moment(this.selectedEndDate).format('MM/DD/YYYY') + ' ' + moment(this.selectedEndTime).format('hh:mm A');
+    if (file !== undefined) {
+      const formData = new FormData();
+      formData.append('file', file);
+      var formattedStartDateTime = moment(this.selectedStartDate).format('MM/DD/YYYY') + ' ' + moment(this.selectedStartTime).format('hh:mm A');
+      var formattedEndDateTime = moment(this.selectedEndDate).format('MM/DD/YYYY') + ' ' + moment(this.selectedEndTime).format('hh:mm A');
 
-    this.http.post<ResponseMetaData>('https://localhost:7154/api/v1/parse/access-per-host?startDate=' + formattedStartDateTime + '&endDate=' + formattedEndDateTime, formData).subscribe(
-      (result) => {
-        this.responseMetaData = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+      this.http.post<ResponseMetaData>('https://localhost:7154/api/v1/parse/access-per-host?startDate=' + formattedStartDateTime + '&endDate=' + formattedEndDateTime, formData).subscribe(
+        (result) => {
+          this.responseMetaData = result;
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
+    else {
+      alert("Please upload the log file");
+    }
   }
-
 }
