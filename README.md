@@ -74,13 +74,19 @@ builder.Services.UseCorsPolicyHandler(new string[] { "https://localhost:4200" })
 ```
 
 ## Parsing Log file using Log Parser
+> As the data inside the log file is available ONLY for the 29 or 30th of August and the Default value of the year is the current year i.e. 2024
+
+- Choose the log file
+- Select start date and time [Data available for 29th or 30th August 2024]
+- Select end date and time [Data available for 29th or 30th August 2024]
+- Click submit
 
 ### Testing Problem 1 using Angular App
 Follow the instructions from Steps 1-4 defined above and then test the Angular UI as follows
 ![task1](https://github.com/user-attachments/assets/0fd91a19-908f-4421-840d-f3baee764b90)
 
 ### Testing Problem 2 using Angular App
-Similarly, follow the instructions as follows
+Click the "Success Per Uri" tab in the navigation and similarly follow the instructions as follows
 ![task2](https://github.com/user-attachments/assets/c9b4e467-5994-420c-b57a-533afc866e69)
 
 
